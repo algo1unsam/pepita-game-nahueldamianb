@@ -1,6 +1,6 @@
 import ciudades.*
 import comidas.*
-import alguien.*
+import entrenador.*
 
 
 object pepita {
@@ -17,7 +17,7 @@ object pepita {
 	
 	method volaHacia(unaCiudad) {
 	if (ciudad != unaCiudad){
-	if (energia > self.energiaParaVolar(posicion.distance(unaCiudad.posicion()))){ //QUE DATO TIENE "DISTANCE"?
+	if (energia > self.energiaParaVolar(posicion.distance(unaCiudad.posicion()))){ 
 			self.move(unaCiudad.posicion())
 			ciudad = unaCiudad
 			}
