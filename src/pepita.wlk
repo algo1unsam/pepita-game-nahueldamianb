@@ -1,6 +1,5 @@
 import ciudades.*
-import comidas.*
-import entrenador.*
+
 
 
 object pepita {
@@ -9,8 +8,8 @@ object pepita {
 
 
 	var property posicion = game.at(3,3)
-	method imagen() = "pepita.png"
-
+	var imagenActual = "pepita1.png"
+	
 	method come(comida) {
 		energia = energia + comida.energia()
 	}
@@ -23,7 +22,7 @@ object pepita {
 			}
 			else 
 				
-				game.say(self, "Dame de comer")
+				game.say(self, "Tengo Hambre")
 		}
 		else
 		unaCiudad.estoyEn(self)
@@ -36,9 +35,16 @@ object pepita {
 		energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 		self.posicion(nuevaPosicion)
 		}
-
+		
+	method imagen() {
+		if (energia < 10){imagenActual	= "pepita.png" return imagenActual}
+		if (energia > 100){imagenActual = "pepita2.png" return imagenActual}
+		else{imagenActual = "pepita1.png"}
+		return imagenActual
+		}
+		
 	method teEncontro(alguien){
-		alguien.queHasEncontrado()
+		alguien.alimentarA(self)
 	}
 
 }

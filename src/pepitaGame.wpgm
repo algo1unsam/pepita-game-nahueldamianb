@@ -6,13 +6,13 @@ import wollok.game.*
 
 program PepitaGame {
 	
-//	Config	
-	game.title("Pepita grafica")
-	game.height(10)
+//	CONFIG 	
+	game.title("Pepita")
+	game.height(10) //VENTANA
 	game.width(10)
 	game.ground("suelo.png")
 
-//	Visuales
+//	Elementos Visuales
 	game.addVisualIn(alpiste, game.at(5,5))
 	game.addVisualIn(manzana, game.at(5,1))
 	game.addVisual(buenosAires)
